@@ -20,8 +20,7 @@ public class HotelRegistrationTest {
         hotelReservationSystem.addHotel(hotelReservationSystem);
         Integer resultL = hotelReservationSystem.hotelDetails();
         Assert.assertEquals(arraySizeL, resultL);
-
-
+        
         Integer arraySizeB = hotelReservationSystem.hotelName.size()+1;
         HashMap<CustomerType, Rate> mapB = new HashMap<CustomerType,Rate>();
         mapB.put(CustomerType.Regular, new Rate(160,40));
