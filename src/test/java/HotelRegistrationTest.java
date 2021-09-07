@@ -46,11 +46,33 @@ public class HotelRegistrationTest {
     public void findHotelName_CheapestAmongAll_ShouldReturnName() {
 
         Scanner sc = new Scanner(System.in);
-        String inputDate ="10Sep2020,11Sep2020";
+        String inputDate ="11Sep2020,12Sep2020";
         hotelReservationSystem = new HotelRegistration();
         String name = hotelReservationSystem.calculateHotel(inputDate);
         Assert.assertEquals("Lakewood", name);
 
     }
 
+//    @Test
+//    public void findHotelName_BestRatedCheapestAmongAll_ShouldReturnName() {
+//
+//        Scanner sc = new Scanner(System.in);
+//        String inputDate ="11Sep2020,12Sep2020";
+//        hotelReservationSystem = new HotelRegistration();
+//        String name = hotelReservationSystem.calculateHotel(inputDate);
+//         Assert.assertEquals("Bridgewood", name);
+//
+//    }
+
+
+
+    @Test
+    public void findHotelName_BestRatedCheapestAmongAll_ShouldReturnName() {
+        Scanner sc = new Scanner(System.in);
+        String inputDate ="11Sep2020,12Sep2020";
+        hotelReservationSystem = new HotelRegistration();
+        String name = hotelReservationSystem.BestRatedCheapHotel(inputDate);
+        Assert.assertEquals("Bridgewood", name);
+
+    }
 }
