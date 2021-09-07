@@ -57,7 +57,6 @@ public class HotelRegistration {
 
         Integer n = Arrays.asList(rate).indexOf(Collections.min(Arrays.asList(rate)));
         System.out.println(hotelName.get(n).name + ", Rate: " + rate[n]);
-
         return hotelName.get(n).name;
     }
 
