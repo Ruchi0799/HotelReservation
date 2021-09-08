@@ -1,9 +1,10 @@
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
+import org.junit.runners.MethodSorters;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HotelRegistrationTest {
 
     HotelRegistration hotelReservationSystem;
@@ -53,6 +54,8 @@ public class HotelRegistrationTest {
 
     }
 
+
+
 //    @Test
 //    public void findHotelName_BestRatedCheapestAmongAll_ShouldReturnName() {
 //
@@ -73,6 +76,17 @@ public class HotelRegistrationTest {
         hotelReservationSystem = new HotelRegistration();
         String name = hotelReservationSystem.BestRatedCheapHotel(inputDate);
         Assert.assertEquals("Bridgewood", name);
+
+    }
+
+    @Test
+    public void findHotelName_BestRatedAmongAll_ShouldReturnName() {
+
+        Scanner sc = new Scanner(System.in);
+        String inputDate ="11Sep2020,12Sep2020";
+        hotelReservationSystem = new HotelRegistration();
+        String name = hotelReservationSystem.BestRatedHotel(inputDate);
+        Assert.assertEquals("Best rated hotel: Ridgewood, Rate: 370 Ratings: 5", name);
 
     }
 }
