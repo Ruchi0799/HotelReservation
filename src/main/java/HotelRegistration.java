@@ -209,17 +209,6 @@ public class HotelRegistration {
             System.out.println("Best rated hotel: " + rates1.get(5).name + ", " + "Rate: " + rates1.get(5).ratestotal + " Ratings: " + rates1.get(5).rating);
 
             return "Best rated hotel: " + rates1.get(5).name + ", " + "Rate: " + rates1.get(5).ratestotal + " Ratings: " + rates1.get(5).rating;
-//        if(rates1.get(3).rating>rates1.get(4).rating && rates1.get(3).ratestotal.equals(rates1.get(4).ratestotal))
-//        {
-//            System.out.println(rates1.get(3).name + ", Rate: " + rates1.get(3).ratestotal+" Ratings: " +rates1.get(3).rating);
-//            return rates1.get(3).name;
-//        }
-//        else if(rates1.get(3).rating<rates1.get(4).rating && rates1.get(3).ratestotal.equals(rates1.get(4).ratestotal))
-//        {
-//
-//            System.out.println(rates1.get(4).name + ", Rate: " + rates1.get(4).ratestotal +" Ratings: " +rates1.get(4).rating);
-//            return rates1.get(4).name;
-//        }
 
 
 
