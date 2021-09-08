@@ -191,9 +191,7 @@ public class HotelRegistration {
 
             }
         });
-
-
-
+        
         Integer n = Arrays.asList(rate).indexOf(Collections.min(Arrays.asList(rate)));
         for(int i=3;i<rates1.size()-1;i++){
             if(rates1.get(i).rating>rates1.get(i+1).rating)
@@ -214,8 +212,6 @@ public class HotelRegistration {
 
 
     }
-
-
 
     public String BestRatedCheapHotelForRewarded(String inputDate){
 
