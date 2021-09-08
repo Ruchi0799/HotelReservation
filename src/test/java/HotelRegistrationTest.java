@@ -89,4 +89,14 @@ public class HotelRegistrationTest {
         Assert.assertEquals("Best rated hotel: Ridgewood, Rate: 370 Ratings: 5", name);
 
     }
+
+    @Test
+    public void findHotelName_BestRatedCheapestForRewardedCustomer_AmongAll_ShouldReturnName() {
+        Scanner sc = new Scanner(System.in);
+        String inputDate ="11Sep2020,12Sep2020";
+        hotelReservationSystem = new HotelRegistration();
+        String name = hotelReservationSystem.BestRatedCheapHotelForRewarded(inputDate);
+        Assert.assertEquals("Best rated cheap hotel for rewarded: Ridgewood, Rate: 140 Ratings: 5", name);
+
+    }
 }

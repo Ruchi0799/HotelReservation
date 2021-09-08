@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 public class HotelRegistration {
     public static ArrayList<HotelRegistration> hotelName = new ArrayList<>();
     public LinkedList<HotelRates> rates1=new LinkedList<>();
+    public LinkedList<HotelRates> rates2=new LinkedList<>();
 
     String name;
     Integer rating;
@@ -216,6 +217,59 @@ public class HotelRegistration {
 
 
 
+    public String BestRatedCheapHotelForRewarded(String inputDate){
+
+        String[] inputArr = inputDate.split(",");
+        DateTimeFormatter fomat = DateTimeFormatter.ofPattern("ddMMMyyyy");
+
+        ArrayList<LocalDate> dateArr = new ArrayList<>();
+        dateArr.add(LocalDate.parse(inputArr[0],fomat));
+        long noOfDaysBetween = ChronoUnit.DAYS.between(LocalDate.parse(inputArr[0],fomat), LocalDate.parse(inputArr[1],fomat));
+
+        while(noOfDaysBetween>0) {
+            dateArr.add(dateArr.get(dateArr.size()-1).plusDays(1));
+            noOfDaysBetween--;
+        }
+
+        Integer[] rate=new Integer[] {0,0,0};
+        int total=0;
+
+
+
+        dateArr.stream().forEach(n->{
+            for(int i=0;i<hotelName.size();i++) {
+
+                if (n.getDayOfWeek().equals(DayOfWeek.SATURDAY) || n.getDayOfWeek().equals(DayOfWeek.SUNDAY)) {
+
+                    rate[i] += hotelName.get(i).rates.get(CustomerType.Rewarded).weekEnd;
+                    HotelRates hotelRates=new HotelRates(hotelName.get(i).name,hotelName.get(i).rating,rate[i]);
+                    rates2.add(hotelRates);
+                }
+                else {
+
+                    rate[i] += hotelName.get(i).rates.get(CustomerType.Rewarded).weekDay;
+                    HotelRates hotelRates=new HotelRates(hotelName.get(i).name,hotelName.get(i).rating,rate[i]);
+                    rates2.add(hotelRates);
+                }
+
+            }
+        });
+
+
+
+        for(int m=5;m>2;m--){
+            if(rates2.get(m).ratestotal<=rates2.get(m-1).ratestotal)
+            {
+
+                System.out.println("Best rated cheap hotel for rewarded: "+rates2.get(m).name + ", Rate: " + rates2.get(m).ratestotal+" Ratings: " +rates2.get(m).rating);
+                return "Best rated cheap hotel for rewarded: "+rates2.get(m).name + ", Rate: " + rates2.get(m).ratestotal+" Ratings: " +rates2.get(m).rating;
+            }
+        }
+
+
+
+        return "none";
+    }
 
 
 
