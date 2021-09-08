@@ -265,9 +265,7 @@ public class HotelRegistration {
                 return "Best rated cheap hotel for rewarded: "+rates2.get(m).name + ", Rate: " + rates2.get(m).ratestotal+" Ratings: " +rates2.get(m).rating;
             }
         }
-
-
-
+        
         return "none";
     }
 
